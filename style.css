@@ -1,0 +1,20 @@
+html, body {
+    background: #222;
+    color: #EEE;
+}
+
+div#back{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+
+    z-index: -50
+}
+
+body > footer{
+    position: fixed;
+    bottom: 0;
+    margin: 60px -60px -60px;
+    padding: 60px;
+    text-align: center;
+}
