@@ -132,13 +132,20 @@ addEdge = (nodeA, nodeB) ->
 
 
 
+onWindowResize = ->
+  if window.innerHeight > 500
+    parentDOM.style.marginTop = "#{(window.innerHeight - 500) / 2}px"
+  return
+
+
 
 
 threeInit = ->
 
   parentDOM = document.getElementById("back")
-  sw =  1000
-  sh =   500
+  sw =  500
+  sh =  500
+  onWindowResize()
   camera = new THREE.PerspectiveCamera(75, sw / sh, 1, 10000)
   camera.position.z = 500;
 
@@ -212,6 +219,8 @@ init = ->
   edgePair = null;
 
   scene.add( group );
+
+  window.addEventListener( 'resize', onWindowResize, false )
 
   run()
 
